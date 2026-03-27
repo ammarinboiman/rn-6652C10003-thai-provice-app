@@ -18,7 +18,7 @@ EX.all page
 <img width="300" height="500" alt="AnyConv com__provide10" src="https://github.com/user-attachments/assets/1db76be7-233f-49e0-8983-261fb6c98a4c" />
 <img width="300" height="500" alt="AnyConv com__provide11" src="https://github.com/user-attachments/assets/38efc5c9-6326-4a57-b5e1-afebf66712d3" />
 <img width="300" height="500" alt="AnyConv com__provide12" src="https://github.com/user-attachments/assets/caad3e83-f71f-481d-adac-2a71c2af98b6" />
-<img width="946" height="2049" alt="provide3" src="https://github.com/user-attachments/assets/2b3c3b7e-42e4-4533-9b4c-e4583aafb976" />
+<img width="300" height="500" alt="provide3" src="https://github.com/user-attachments/assets/2b3c3b7e-42e4-4533-9b4c-e4583aafb976" />
 
 
 
