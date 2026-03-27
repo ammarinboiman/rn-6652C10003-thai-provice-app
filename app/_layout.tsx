@@ -1,24 +1,61 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-import { Stack } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
-import 'react-native-reanimated';
-
-import { useColorScheme } from '@/hooks/use-color-scheme';
-
-export const unstable_settings = {
-  anchor: '(tabs)',
-};
+import {
+  Kanit_400Regular,
+  Kanit_600SemiBold,
+  Kanit_700Bold,
+  useFonts,
+} from "@expo-google-fonts/kanit";
+import { Stack } from "expo-router";
+import * as splashScreen from "expo-splash-screen";
+import { useEffect } from "react";
 
 export default function RootLayout() {
-  const colorScheme = useColorScheme();
+  //---Loading Fonts==--
+  const [fontsLoaded] = useFonts({
+    KanitRegular: Kanit_400Regular,
+    KanitBold: Kanit_700Bold,
+    KanitSemiBold: Kanit_600SemiBold,
+  });
+  useEffect(() => {
+    if (fontsLoaded) {
+      splashScreen.hideAsync();
+    }
+  }, [fontsLoaded]);
 
+  if (!fontsLoaded) return null;
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Modal' }} />
-      </Stack>
-      <StatusBar style="auto" />
-    </ThemeProvider>
+    <Stack>
+      <Stack.Screen name="index" options={{ headerShown: false }} />
+      <Stack.Screen
+        name="home"
+        options={{
+          title: "Top5 at CHIANGMAI",
+          headerTitleAlign: "center",
+          headerTitleStyle: { fontFamily: "KanitBold", color: "#ffffff" },
+          headerTintColor: "#4A3B32",
+          headerStyle: { backgroundColor: "#683c21" },
+        }}
+      />
+      <Stack.Screen
+        name="detail"
+        options={{
+          title: "",
+          headerTitleAlign: "center",
+          headerBackButtonDisplayMode: "minimal",
+          headerTitleStyle: { fontFamily: "KanitBold", color: "#ffffff" },
+          headerTintColor: "#ffff",
+          headerStyle: { backgroundColor: "#683c21" },
+        }}
+      />
+      <Stack.Screen
+        name="inside"
+        options={{
+          title: "",
+          headerTitleAlign: "center",
+          headerTitleStyle: { fontFamily: "KanitBold", color: "#ffffff" },
+          headerTintColor: "#4A3B32",
+          headerStyle: { backgroundColor: "#683c21" },
+        }}
+      />
+    </Stack>
   );
 }
